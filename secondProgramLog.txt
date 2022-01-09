@@ -1,0 +1,347 @@
+ID: 2
+ExeStack:
+	(Ref(int) v;;(NewStmt(v : int: 20);(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	Ref(int) v;
+	(NewStmt(v : int: 20);(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	Ref(int) v;
+	(NewStmt(v : int: 20);(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(NewStmt(v : int: 20);(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))))
+
+SymTbl:
+v --> address = 0 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(NewStmt(v : int: 20);(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))))
+
+SymTbl:
+v --> address = 0 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	NewStmt(v : int: 20)
+	(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5)))
+
+SymTbl:
+v --> address = 0 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	NewStmt(v : int: 20)
+	(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5)))
+
+SymTbl:
+v --> address = 0 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5)))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(print(ReadHeapExp(v));(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5)))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	print(ReadHeapExp(v))
+	(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	print(ReadHeapExp(v))
+	(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	(WriteHeapStmt(v <- int: 30);print(ReadHeapExp(v) + int: 5))
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	WriteHeapStmt(v <- int: 30)
+	print(ReadHeapExp(v) + int: 5)
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	WriteHeapStmt(v <- int: 30)
+	print(ReadHeapExp(v) + int: 5)
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 20
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	print(ReadHeapExp(v) + int: 5)
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 30
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+	print(ReadHeapExp(v) + int: 5)
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+
+SymTbl:
+
+Heap:
+1 --> int: 30
+
+
+
+=====================
+
+
+ID: 2
+ExeStack:
+
+SymTbl:
+v --> address = 1 -> int
+
+Out:
+int: 20
+int: 35
+
+SymTbl:
+
+Heap:
+1 --> int: 30
+
+
+
+=====================
+
+

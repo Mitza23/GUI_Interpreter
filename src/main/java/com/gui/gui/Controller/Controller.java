@@ -145,7 +145,7 @@ public class Controller {
             prgList.forEach(prg -> {
                 try {
                     repository.logPrgStateExec(prg);
-                    System.out.println(prg);
+//                    System.out.println(prg);
                 } catch (IOException e) {
                     throw new MyException("Error logging to file program: " + prg.getId());
                 }
@@ -190,6 +190,9 @@ public class Controller {
         prgList = removeCompletedPrg(repository.getPrgList());
         executor.shutdownNow();
         repository.setPrgList(prgList);
+        if(prgList.size() == 0){
+            throw new MyException("Execution Done");
+        }
     }
 
     List<PrgState> removeCompletedPrg(List<PrgState> inPrgList) {

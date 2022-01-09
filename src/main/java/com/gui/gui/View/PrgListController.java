@@ -44,15 +44,15 @@ public class PrgListController implements Initializable {
 
     public void setUp() {
         myFirstRepository = new Repository("firstProgramLog.txt");
-        myFirstController = new Controller(myFirstRepository);
+        myFirstController = new Controller(myFirstRepository, false);
         mySecondRepository = new Repository("secondProgramLog.txt");
-        mySecondController = new Controller(mySecondRepository);
+        mySecondController = new Controller(mySecondRepository, false);
         myThirdRepository = new Repository("thirdProgramLog.txt");
-        myThirdController = new Controller(myThirdRepository);
+        myThirdController = new Controller(myThirdRepository, false);
         myFourthRepository = new Repository("fourthProgramLog.txt");
-        myFourthController = new Controller(myFourthRepository);
+        myFourthController = new Controller(myFourthRepository, false);
         myLastRepository = new Repository("lastProgramLog.txt");
-        myLastController = new Controller(myLastRepository);
+        myLastController = new Controller(myLastRepository, false);
 
         IStmt firstProgram = new CompStmt(new VarDeclStmt("varf", new StringType()),
                 new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
@@ -92,7 +92,8 @@ public class PrgListController implements Initializable {
                         new CompStmt(new AssignStmt("a", new ArithExp('+', new ValueExp(new IntValue(2)), new
                                 ArithExp('*', new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5))))),
                                 new CompStmt(new AssignStmt("b", new ArithExp('+', new VarExp("a"), new ValueExp(new
-                                        IntValue(1)))), new PrintStmt(new VarExp("b"))))));
+                                        IntValue(1)))),
+                                        new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b")))))));
 
         MyIStack<IStmt> exeStack1 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable1 = new MyDictionary<String, Value>();

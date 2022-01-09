@@ -1,7 +1,6 @@
 package com.gui.gui.View;
 
 import com.gui.gui.Controller.Controller;
-import com.gui.gui.Domain.Exceptions.MyException;
 import com.gui.gui.Domain.PrgState;
 import com.gui.gui.Domain.Statements.IStmt;
 import com.gui.gui.Domain.Values.Value;
@@ -17,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -50,7 +50,7 @@ public class PrgRunController implements Initializable {
     ListView<String> exeStackList;
 
     public PrgRunController(Controller myController) {
-        System.out.println(myController.getRepository().getCrtPrg().getStk());
+//        System.out.println(myController.getRepository().getCrtPrg().getStk());
         this.myController = myController;
     }
 
@@ -67,7 +67,8 @@ public class PrgRunController implements Initializable {
         runButton.setOnAction(e -> {
             try {
                 myController.oneStepGUI();
-            } catch (MyException e1) {
+            } catch (Exception e1) {
+                updateUIComponents();
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Toy Language - Current program finished");
                 alert.setHeaderText(null);
@@ -154,8 +155,12 @@ public class PrgRunController implements Initializable {
         }
         if (prgResult != null) {
             symTableList.addAll(prgResult.getSymTable().getContent().entrySet());
-            for (IStmt e : prgResult.getStk().getStack()) {
-                exeStackItemsList.add(e.toString());
+//            for (IStmt e : prgResult.getStk().getStack()) {
+//                exeStackItemsList.add(e.toString());
+//            }
+            ArrayList<IStmt> stack = new ArrayList<IStmt>(prgResult.getStk().getStack());
+            for(int i = stack.size()-1 ; i >= 0 ; i--){
+                exeStackItemsList.add(stack.get(i).toString());
             }
             symTable.setItems(symTableList);
             exeStackList.setItems(exeStackItemsList);
