@@ -1,0 +1,402 @@
+ID: 1
+ExeStack:
+	(string varf;;(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	string varf;
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	string varf;
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	varf = string: test.in;
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	varf = string: test.in;
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	openFile(varf)
+	(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	openFile(varf)
+	(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(string varf;;(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	string varf;
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	string varf;
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(varf = string: test.in;;(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	varf = string: test.in;
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	varf = string: test.in;
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: 
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	(openFile(varf);(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf)))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	openFile(varf)
+	(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 1
+ExeStack:
+	openFile(varf)
+	(int varc;;(readFile(varf, varc);(print(varc);(readFile(varf, varc);(print(varc);closeRFile(varf))))))
+
+SymTbl:
+varf --> string: test.in
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
