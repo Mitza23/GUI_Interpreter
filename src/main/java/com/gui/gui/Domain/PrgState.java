@@ -127,6 +127,7 @@ public class PrgState implements Clonable<PrgState> {
     }
 
     public boolean isNotCompleted() {
+//        System.out.println(exeStack.toString());
         return !exeStack.isEmpty();
     }
 

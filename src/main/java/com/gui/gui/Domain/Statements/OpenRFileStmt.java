@@ -28,12 +28,21 @@ public class OpenRFileStmt implements IStmt{
             String name = ((StringValue) exp.eval(symTbl, state.getHeap())).getVal();
             if(!fileTbl.isDefined(name)){
                 try {
+
+//                    PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(name, true)));
+//                    logFile.println(state.toString());
+//                    logFile.println("\n\n=====================\n\n");
+//                    logFile.flush();
+
                     BufferedReader buff = new BufferedReader(new FileReader(name));
                     fileTbl.put(name, buff);
                 }
                 catch (FileNotFoundException e){
                     throw new MyException("File not found: " + e.getMessage());
                 }
+//                catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             } else
                 throw new MyException("File " + name + " already opened");
         } else

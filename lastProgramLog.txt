@@ -3665,3 +3665,2108 @@ Heap:
 =====================
 
 
+ID: 5
+ExeStack:
+	(int a;;(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+int: 18
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int a;;(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+int: 18
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int a;;(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 5
+ExeStack:
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+int: 18
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int a;;(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+int: 18
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int a;;(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int a;
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(int b;;(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b)))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	int b;
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(a = int: 2 + int: 3 * int: 5;;(b = a + int: 1;;(print(a);print(b))))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	a = int: 2 + int: 3 * int: 5;
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 0
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(b = a + int: 1;;(print(a);print(b)))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	b = a + int: 1;
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 0
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	(print(a);print(b))
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(a)
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+	print(b)
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+
+ID: 6
+ExeStack:
+
+SymTbl:
+a --> int: 17
+b --> int: 18
+
+Out:
+int: 17
+int: 18
+
+SymTbl:
+
+Heap:
+
+
+
+=====================
+
+

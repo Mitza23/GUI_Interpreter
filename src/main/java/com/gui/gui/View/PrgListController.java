@@ -34,8 +34,8 @@ import java.util.ResourceBundle;
 
 public class PrgListController implements Initializable {
 
-    static Repository myFirstRepository, mySecondRepository, myThirdRepository, myFourthRepository, myLastRepository;
-    static Controller myFirstController, mySecondController, myThirdController, myFourthController, myLastController;
+    static Repository repo1, repo2, repo3, repo4, repo5, repo6, repo7;
+    static Controller ctrl1, ctrl2, ctrl3, ctrl4, ctrl5, ctrl6, ctrl7;
     //static IStmt firstProgram, secondProgram, thirdProgram, fourthProgram, lastProgram;
     @FXML
     ListView<Controller> myPrgList;
@@ -43,18 +43,22 @@ public class PrgListController implements Initializable {
     Button runButton;
 
     public void setUp() {
-        myFirstRepository = new Repository("firstProgramLog.txt");
-        myFirstController = new Controller(myFirstRepository, false);
-        mySecondRepository = new Repository("secondProgramLog.txt");
-        mySecondController = new Controller(mySecondRepository, false);
-        myThirdRepository = new Repository("thirdProgramLog.txt");
-        myThirdController = new Controller(myThirdRepository, false);
-        myFourthRepository = new Repository("fourthProgramLog.txt");
-        myFourthController = new Controller(myFourthRepository, false);
-        myLastRepository = new Repository("lastProgramLog.txt");
-        myLastController = new Controller(myLastRepository, false);
+        repo1 = new Repository("log1.txt");
+        ctrl1 = new Controller(repo1, false);
+        repo2 = new Repository("log2.txt");
+        ctrl2 = new Controller(repo2, false);
+        repo3 = new Repository("log3.txt");
+        ctrl3 = new Controller(repo3, false);
+        repo4 = new Repository("log4.txt");
+        ctrl4 = new Controller(repo4, false);
+        repo5 = new Repository("log5.txt");
+        ctrl5 = new Controller(repo5, false);
+        repo6 = new Repository("lastProgramLog.txt");
+        ctrl6 = new Controller(repo6, false);
+        repo7 = new Repository("log7.txt");
+        ctrl7 = new Controller(repo7, false);
 
-        IStmt firstProgram = new CompStmt(new VarDeclStmt("varf", new StringType()),
+        IStmt stmt1 = new CompStmt(new VarDeclStmt("varf", new StringType()),
                 new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
                         new CompStmt(new OpenRFileStmt(new VarExp("varf")),
                                 new CompStmt(new VarDeclStmt("varc", new IntType()),
@@ -64,14 +68,14 @@ public class PrgListController implements Initializable {
                                                                 new CompStmt(new PrintStmt(new VarExp("varc")),
                                                                         new CloseRFileStmt(new VarExp("varf"))))))))));
 
-        IStmt secondProgram = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())),
+        IStmt stmt2 = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())),
                 new CompStmt(new NewStmt("v", new ValueExp(new IntValue(20))),
                         new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v"))),
                                 new CompStmt(new WriteHeapStmt("v", new ValueExp(new IntValue(30))),
                                         new PrintStmt(new ArithExp('+', new ReadHeapExp(new VarExp("v")),
                                                 new ValueExp(new IntValue(5))))))));
 
-        IStmt thirdProgram = new CompStmt(new VarDeclStmt("v", new IntType()),
+        IStmt stmt3 = new CompStmt(new VarDeclStmt("v", new IntType()),
                 new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(4))),
                         new CompStmt(new WhileStmt(new RelationalExp(new VarExp("v"),
                                 new ValueExp(new IntValue(0)), ">"),
@@ -80,14 +84,25 @@ public class PrgListController implements Initializable {
                                                 new ValueExp(new IntValue(1)))))),
                                 new PrintStmt(new VarExp("v")))));
 
-        IStmt fourthProgram = new CompStmt(new VarDeclStmt("a", new BoolType()),
+        IStmt stmt4 = new CompStmt(new VarDeclStmt("a", new BoolType()),
                 new CompStmt(new VarDeclStmt("v", new IntType()),
                         new CompStmt(new AssignStmt("a", new ValueExp(new BoolValue(true))),
                                 new CompStmt(new IfStmt(new VarExp("a"), new AssignStmt("v", new ValueExp(new
                                         IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(new
                                         VarExp("v"))))));
+        IStmt stmt5 = new CompStmt(new VarDeclStmt("v", new IntType()),
+                new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+                        new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(10))),
+                                new CompStmt(new NewStmt("a", new ValueExp(new IntValue(22))),
+                                        new CompStmt(
+                                                new ForkStmt(new CompStmt(new WriteHeapStmt("a", new ValueExp(new IntValue(30))),
+                                                        new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                                                new CompStmt(new PrintStmt(new VarExp("v")),
+                                                                        new PrintStmt(new ReadHeapExp(new VarExp("a"))))))),
+                                                new CompStmt(new PrintStmt(new VarExp("v")),
+                                                        new PrintStmt(new ReadHeapExp(new VarExp("a")))))))));
 
-        IStmt lastProgram = new CompStmt(new VarDeclStmt("a", new IntType()),
+        IStmt stmt6 = new CompStmt(new VarDeclStmt("a", new IntType()),
                 new CompStmt(new VarDeclStmt("b", new IntType()),
                         new CompStmt(new AssignStmt("a", new ArithExp('+', new ValueExp(new IntValue(2)), new
                                 ArithExp('*', new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5))))),
@@ -95,52 +110,79 @@ public class PrgListController implements Initializable {
                                         IntValue(1)))),
                                         new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b")))))));
 
+        IStmt stmt7 = new CompStmt(new VarDeclStmt("a", new IntType()), new PrintStmt(new VarExp("a")));
+
         MyIStack<IStmt> exeStack1 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable1 = new MyDictionary<String, Value>();
         MyIList<Value> out1 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable1 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap1 = new MyHeap();
-        PrgState myPrgState1 = new PrgState(exeStack1, symTable1, out1, fileTable1, heap1, firstProgram);
-        myFirstController.addProgram(myPrgState1);
+        PrgState prg1 = new PrgState(exeStack1, symTable1, out1, fileTable1, heap1, stmt1);
+        ctrl1.addProgram(prg1);
+
         MyIStack<IStmt> exeStack2 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable2 = new MyDictionary<String, Value>();
         MyIList<Value> out2 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable2 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap2 = new MyHeap();
-        PrgState myPrgState2 = new PrgState(exeStack2, symTable2, out2, fileTable2, heap2, secondProgram);
-        mySecondController.addProgram(myPrgState2);
+        PrgState prg2 = new PrgState(exeStack2, symTable2, out2, fileTable2, heap2, stmt2);
+        ctrl2.addProgram(prg2);
+
         MyIStack<IStmt> exeStack3 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable3 = new MyDictionary<String, Value>();
         MyIList<Value> out3 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable3 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap3 = new MyHeap();
-        PrgState myPrgState3 = new PrgState(exeStack3, symTable3, out3, fileTable3, heap3, thirdProgram);
-        myThirdController.addProgram(myPrgState3);
+        PrgState prg3 = new PrgState(exeStack3, symTable3, out3, fileTable3, heap3, stmt3);
+        ctrl3.addProgram(prg3);
+
         MyIStack<IStmt> exeStack4 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable4 = new MyDictionary<String, Value>();
         MyIList<Value> out4 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable4 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap4 = new MyHeap();
-        PrgState myPrgState4 = new PrgState(exeStack4, symTable4, out4, fileTable4, heap4, fourthProgram);
-        myFourthController.addProgram(myPrgState4);
+        PrgState prg4 = new PrgState(exeStack4, symTable4, out4, fileTable4, heap4, stmt4);
+        ctrl4.addProgram(prg4);
+
         MyIStack<IStmt> exeStack5 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable5 = new MyDictionary<String, Value>();
         MyIList<Value> out5 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable5 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap5 = new MyHeap();
-        PrgState myLastPrgState = new PrgState(exeStack5, symTable5, out5, fileTable5, heap5, lastProgram);
-        myLastController.addProgram(myLastPrgState);
+        PrgState prg5 = new PrgState(exeStack5, symTable5, out5, fileTable5, heap5, stmt5);
+        ctrl5.addProgram(prg5);
+
+        MyIStack<IStmt> exeStack6 = new MyStack<IStmt>();
+        MyIDictionary<String, Value> symTable6 = new MyDictionary<String, Value>();
+        MyIList<Value> out6 = new MyList<Value>();
+        MyIDictionary<String, BufferedReader> fileTable6 = new MyDictionary<String, BufferedReader>();
+        MyIHeap heap6 = new MyHeap();
+        PrgState prg6 = new PrgState(exeStack6, symTable6, out6, fileTable6, heap6, stmt6);
+        ctrl6.addProgram(prg6);
+
+        MyIStack<IStmt> exeStack7 = new MyStack<IStmt>();
+        MyIDictionary<String, Value> symTable7 = new MyDictionary<String, Value>();
+        MyIList<Value> out7 = new MyList<Value>();
+        MyIDictionary<String, BufferedReader> fileTable7 = new MyDictionary<String, BufferedReader>();
+        MyIHeap heap7 = new MyHeap();
+        PrgState prg7 = new PrgState(exeStack7, symTable7, out7, fileTable7, heap7, stmt7);
+        ctrl7.addProgram(prg7);
+
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setUp();
         ObservableList<Controller> myData = FXCollections.observableArrayList();
-        myData.add(myFirstController);
-        myData.add(mySecondController);
-        myData.add(myThirdController);
-        myData.add(myFourthController);
-        myData.add(myLastController);
+        myData.add(ctrl1);
+        myData.add(ctrl2);
+        myData.add(ctrl3);
+        myData.add(ctrl4);
+        myData.add(ctrl5);
+        myData.add(ctrl6);
+        myData.add(ctrl7);
+        myData.add(ctrl7);
         myPrgList.setItems(myData);
         myPrgList.getSelectionModel().selectFirst();
         runButton.setOnAction(e -> {

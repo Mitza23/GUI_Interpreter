@@ -67,6 +67,7 @@ public class PrgRunController implements Initializable {
         runButton.setOnAction(e -> {
             try {
                 myController.oneStepGUI();
+                updateUIComponents();
             } catch (Exception e1) {
                 updateUIComponents();
                 Alert alert = new Alert(AlertType.INFORMATION);
@@ -114,7 +115,9 @@ public class PrgRunController implements Initializable {
         ObservableList<HashMap.Entry<Integer, Value>> heapTableList = FXCollections.observableArrayList();
         heapTableAddress.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getKey())));
         heapTableValue.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getValue().toString()));
+//        if((myController.getRepository().getPrgList().size() > 0)) {
         heapTableList.addAll(myController.getRepository().getPrgList().get(0).getHeap().getContent().entrySet());
+//        }
         heapTable.setItems(heapTableList);
     }
 

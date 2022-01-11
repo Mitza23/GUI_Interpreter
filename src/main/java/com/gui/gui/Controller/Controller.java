@@ -187,10 +187,10 @@ public class Controller {
         prgList.stream()
                 .forEach(prg -> prg.setHeap(newHeap));
         oneStepForAllPrg(prgList);
-        prgList = removeCompletedPrg(repository.getPrgList());
+//        prgList = removeCompletedPrg(repository.getPrgList());
         executor.shutdownNow();
         repository.setPrgList(prgList);
-        if(prgList.size() == 0){
+        if(prgList.size() == 1 && prgList.get(0).getStk().getSize() == 0){
             throw new MyException("Execution Done");
         }
     }

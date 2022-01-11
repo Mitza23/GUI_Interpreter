@@ -80,4 +80,9 @@ public class RelationalExp implements Exp{
             throw new MyException("first operand is not an integer");
         }
     }
+
+    @Override
+    public String toString() {
+        return e1.toString() + " " + op.toString() + " " + e2.toString();
+    }
 }
