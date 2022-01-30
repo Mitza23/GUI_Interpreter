@@ -16,6 +16,7 @@ public class PrgState implements Clonable<PrgState> {
     MyIList<Value> out;
     MyIDictionary<String, BufferedReader> fileTable;
     MyIHeap heap;
+    MyIBarrierTable barrierTable;
     int id;
     IStmt originalProgram; //optional field, but good to have
 
@@ -36,16 +37,40 @@ public class PrgState implements Clonable<PrgState> {
         return prgCount;
     }
 
+    public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String, Value> symTable, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStmt originalProgram, MyIBarrierTable barrierTable) {
+        this.exeStack = exeStack;
+        this.symTable = symTable;
+        this.out = out;
+        this.fileTable = fileTable;
+        this.heap = heap;
+        this.barrierTable = barrierTable;
+        this.originalProgram = originalProgram;
+        this.id = getAndIncrementPrgCount();
+        exeStack.push(originalProgram);
+    }
+
+    public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String, Value> symTable, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, MyIBarrierTable barrierTable) {
+        this.exeStack = exeStack;
+        this.symTable = symTable;
+        this.out = out;
+        this.fileTable = fileTable;
+        this.heap = heap;
+        this.barrierTable = barrierTable;
+        this.id = getAndIncrementPrgCount();
+    }
+
     public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String, Value> symTable, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStmt originalProgram) {
         this.exeStack = exeStack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.barrierTable = new MyBarrierTable();
         this.originalProgram = originalProgram;
         this.id = getAndIncrementPrgCount();
         exeStack.push(originalProgram);
     }
+
 
     public PrgState(MyIStack<IStmt> exeStack, MyIDictionary<String, Value> symTable, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap) {
         this.exeStack = exeStack;
@@ -53,6 +78,7 @@ public class PrgState implements Clonable<PrgState> {
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.barrierTable = new MyBarrierTable();
         this.id = getAndIncrementPrgCount();
     }
 
@@ -112,7 +138,9 @@ public class PrgState implements Clonable<PrgState> {
                 .append("\n")
                 .append(fileTable.toString())
                 .append("\n")
-                .append(heap.toString());
+                .append(heap.toString())
+                .append("\n")
+                .append(barrierTable.toString());
         return r.toString();
     }
 
@@ -132,6 +160,7 @@ public class PrgState implements Clonable<PrgState> {
     }
 
     public PrgState oneStep() throws MyException {
+//        System.out.println(this);
         if (exeStack.isEmpty()) {
             throw new MyException("prgstate stack is empty");
         }
@@ -141,5 +170,9 @@ public class PrgState implements Clonable<PrgState> {
 
     public void setHeap(MyIHeap heap) {
         this.heap = heap;
+    }
+
+    public MyIBarrierTable getBarrierTable() {
+        return barrierTable;
     }
 }

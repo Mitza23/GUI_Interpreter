@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -48,6 +49,15 @@ public class PrgRunController implements Initializable {
     TableColumn<HashMap.Entry<String, Value>, String> symTableValue;
     @FXML
     ListView<String> exeStackList;
+    @FXML
+    TableView<HashMap.Entry<Integer, Pair<Integer, List<Integer>>>> barrierTable;
+    @FXML
+    TableColumn<HashMap.Entry<Integer, Pair<Integer, List<Integer>>>, String> barrierTableKey;
+    @FXML
+    TableColumn<HashMap.Entry<Integer, Pair<Integer, List<Integer>>>, String> barrierTableLimit;
+    @FXML
+    TableColumn<HashMap.Entry<Integer, Pair<Integer, List<Integer>>>, String> barrierTableList;
+
 
     public PrgRunController(Controller myController) {
 //        System.out.println(myController.getRepository().getCrtPrg().getStk());
@@ -93,6 +103,7 @@ public class PrgRunController implements Initializable {
         setPrgStateList();
         prgStateList.getSelectionModel().selectFirst();
         setSymTableAndExeStack();
+        setBarrierTable();
     }
 
     public void updateUIComponents() {
@@ -105,10 +116,20 @@ public class PrgRunController implements Initializable {
             prgStateList.getSelectionModel().selectFirst();
         }
         setSymTableAndExeStack();
+        setBarrierTable();
     }
 
     public void setNumberLabel() {
         nrPrgStates.setText("The number of PrgStates: " + myController.getRepository().getPrgList().size());
+    }
+
+    private void setBarrierTable() {
+        ObservableList<HashMap.Entry<Integer, Pair<Integer, List<Integer>>>> barrierTableViewList = FXCollections.observableArrayList();
+        barrierTableKey.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getKey())));
+        barrierTableLimit.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(Integer.toString(cellData.getValue().getValue().getKey())));
+        barrierTableList.setCellValueFactory(cellData-> new ReadOnlyStringWrapper(cellData.getValue().getValue().getValue().toString()));
+        barrierTableViewList.addAll(myController.getRepository().getPrgList().get(0).getBarrierTable().getContent().entrySet());
+        barrierTable.setItems(barrierTableViewList);
     }
 
     public void setHeapTable() {

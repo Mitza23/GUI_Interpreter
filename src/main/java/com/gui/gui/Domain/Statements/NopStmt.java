@@ -20,4 +20,9 @@ public class NopStmt implements IStmt {
     public IStmt clone() {
         return new NopStmt();
     }
+
+    @Override
+    public String toString() {
+        return " _ ";
+    }
 }

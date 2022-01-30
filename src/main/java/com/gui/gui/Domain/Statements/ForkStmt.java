@@ -15,14 +15,15 @@ public class ForkStmt implements IStmt {
 
     @Override
     public IStmt clone() {
-        return null;
+        return new ForkStmt(stmt.clone());
     }
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
+//        System.out.println(stmt);
         MyStack<IStmt> stack = new MyStack<IStmt>();
         stack.push(stmt);
-        return new PrgState(stack, state.getSymTable().clone(), state.getOut(), state.getFileTable(), state.getHeap());
+        return new PrgState(stack, state.getSymTable().clone(), state.getOut(), state.getFileTable(), state.getHeap(), state.getBarrierTable());
     }
 
     @Override

@@ -34,8 +34,8 @@ import java.util.ResourceBundle;
 
 public class PrgListController implements Initializable {
 
-    static Repository repo1, repo2, repo3, repo4, repo5, repo6, repo7;
-    static Controller ctrl1, ctrl2, ctrl3, ctrl4, ctrl5, ctrl6, ctrl7;
+    static Repository repo1, repo2, repo3, repo4, repo5, repo6, repo7, repo8;
+    static Controller ctrl1, ctrl2, ctrl3, ctrl4, ctrl5, ctrl6, ctrl7, ctrl8;
     //static IStmt firstProgram, secondProgram, thirdProgram, fourthProgram, lastProgram;
     @FXML
     ListView<Controller> myPrgList;
@@ -53,10 +53,12 @@ public class PrgListController implements Initializable {
         ctrl4 = new Controller(repo4, false);
         repo5 = new Repository("log5.txt");
         ctrl5 = new Controller(repo5, false);
-        repo6 = new Repository("lastProgramLog.txt");
+        repo6 = new Repository("log6.txt");
         ctrl6 = new Controller(repo6, false);
         repo7 = new Repository("log7.txt");
         ctrl7 = new Controller(repo7, false);
+        repo8 = new Repository("log8.txt");
+        ctrl8 = new Controller(repo8, false);
 
         IStmt stmt1 = new CompStmt(new VarDeclStmt("varf", new StringType()),
                 new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
@@ -110,7 +112,68 @@ public class PrgListController implements Initializable {
                                         IntValue(1)))),
                                         new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b")))))));
 
-        IStmt stmt7 = new CompStmt(new VarDeclStmt("a", new IntType()), new PrintStmt(new VarExp("a")));
+        IStmt stmt7 = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())),
+                new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
+                        new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())),
+                            new CompStmt(new VarDeclStmt("cnt", new IntType()),
+                                    new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(2))),
+                                            new CompStmt(new NewStmt("v2", new ValueExp(new IntValue(3))),
+                                                    new CompStmt(new NewStmt("v3", new ValueExp(new IntValue(4))),
+                                                            new CompStmt(new NewBarrierStmt("cnt", new ReadHeapExp(new VarExp("v2"))),
+                 new CompStmt(new ForkStmt(
+                         new CompStmt(new AwaitBarrierStmt("cnt"),
+                                 new CompStmt(new WriteHeapStmt("v1", new ArithExp('*', new ReadHeapExp(new VarExp("v1")), new ValueExp(new IntValue(10)))),
+                                       new PrintStmt(new ReadHeapExp(new VarExp("v1")))
+                                 )
+                         )
+                 ),
+                    new CompStmt(new ForkStmt(
+                            new CompStmt(new AwaitBarrierStmt("cnt"),
+                                    new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                            new CompStmt(new WriteHeapStmt("v2", new ArithExp('*', new ReadHeapExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                                    new PrintStmt(new ReadHeapExp(new VarExp("v2")))
+                                                )
+                                            )
+                                         )
+                                    ),
+                            new CompStmt(new AwaitBarrierStmt("cnt"), new PrintStmt(new ReadHeapExp(new VarExp("v3"))))
+                 )
+                                                                    )
+                                                            )
+                                                    )
+                                    )
+                               )
+                            )
+                        )
+                    )
+                );
+
+        IStmt stmt8 = new CompStmt(new VarDeclStmt("v", new IntType()),
+                new CompStmt(new VarDeclStmt("x", new IntType()),
+                        new CompStmt(new VarDeclStmt("y", new IntType()),
+                                new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(0))),
+                                        new CompStmt(
+                                                new RepeatUntilStmt(
+                                                        new CompStmt(
+                                                                new ForkStmt(
+                                                                    new CompStmt(
+                                                                        new PrintStmt(new VarExp("v")),
+                                                                        new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                                            )
+                                                        ),
+                                                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                                        ),
+                                                        new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), "==")
+                                                ),
+                                                new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))),
+                                                        new CompStmt(new NopStmt(),
+                                                                new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(3))),
+                                                                        new CompStmt(new NopStmt(),
+                                                                                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10)))))
+                                                                )
+                                                        )
+                                                )
+                                        )))));
 
         MyIStack<IStmt> exeStack1 = new MyStack<IStmt>();
         MyIDictionary<String, Value> symTable1 = new MyDictionary<String, Value>();
@@ -165,8 +228,17 @@ public class PrgListController implements Initializable {
         MyIList<Value> out7 = new MyList<Value>();
         MyIDictionary<String, BufferedReader> fileTable7 = new MyDictionary<String, BufferedReader>();
         MyIHeap heap7 = new MyHeap();
-        PrgState prg7 = new PrgState(exeStack7, symTable7, out7, fileTable7, heap7, stmt7);
+        MyIBarrierTable barrierTable7 = new MyBarrierTable();
+        PrgState prg7 = new PrgState(exeStack7, symTable7, out7, fileTable7, heap7, stmt7, barrierTable7);
         ctrl7.addProgram(prg7);
+
+        MyIStack<IStmt> exeStack8 = new MyStack<IStmt>();
+        MyIDictionary<String, Value> symTable8 = new MyDictionary<String, Value>();
+        MyIList<Value> out8 = new MyList<Value>();
+        MyIDictionary<String, BufferedReader> fileTable8 = new MyDictionary<String, BufferedReader>();
+        MyIHeap heap8 = new MyHeap();
+        PrgState prg8 = new PrgState(exeStack8, symTable8, out8, fileTable8, heap8, stmt8);
+        ctrl8.addProgram(prg8);
 
 
     }
@@ -175,14 +247,14 @@ public class PrgListController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setUp();
         ObservableList<Controller> myData = FXCollections.observableArrayList();
-        myData.add(ctrl1);
-        myData.add(ctrl2);
-        myData.add(ctrl3);
-        myData.add(ctrl4);
-        myData.add(ctrl5);
-        myData.add(ctrl6);
+//        myData.add(ctrl1);
+//        myData.add(ctrl2);
+//        myData.add(ctrl3);
+//        myData.add(ctrl4);
+//        myData.add(ctrl5);
+//        myData.add(ctrl6);
         myData.add(ctrl7);
-        myData.add(ctrl7);
+//        myData.add(ctrl8);
         myPrgList.setItems(myData);
         myPrgList.getSelectionModel().selectFirst();
         runButton.setOnAction(e -> {

@@ -11,18 +11,18 @@ import com.gui.gui.Domain.Types.Type;
 import com.gui.gui.Domain.Values.BoolValue;
 import com.gui.gui.Domain.Values.Value;
 
-public class WhileStmt implements IStmt {
+public class WhileNotStmt implements IStmt{
     Exp exp;
     IStmt stmt;
 
-    public WhileStmt(Exp exp, IStmt stmt) {
+    public WhileNotStmt(Exp exp, IStmt stmt) {
         this.exp = exp;
         this.stmt = stmt;
     }
 
     @Override
     public IStmt clone() {
-        return new WhileStmt(exp.clone(), stmt.clone());
+        return new WhileNotStmt(exp.clone(), stmt.clone());
     }
 
     @Override
@@ -32,7 +32,7 @@ public class WhileStmt implements IStmt {
         MyIHeap heap = state.getHeap();
         if (exp.eval(symtbl, heap).getType().equals(new BoolType())) {
             boolean ok = ((BoolValue) exp.eval(symtbl, heap)).getVal();
-            if (ok) {
+            if (!ok) {
                 stack.push(this.clone());
                 stack.push(stmt);
             }
@@ -53,6 +53,6 @@ public class WhileStmt implements IStmt {
 
     @Override
     public String toString() {
-        return "while(" + exp + "){ " + stmt + "}";
+        return "whileNot(" + exp + "){ " + stmt + "}";
     }
 }

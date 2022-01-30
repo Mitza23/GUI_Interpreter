@@ -61,7 +61,6 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.gui.gui/com.gui.gui.MainInterpreter</mainClass>
-<!--                            <mainClass>com.gui.gui/com.gui.gui.HelloApplication</mainClass>-->
                         </configuration>
                     </execution>
                 </executions>
